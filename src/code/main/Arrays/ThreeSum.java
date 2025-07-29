@@ -2,7 +2,36 @@ package code.main.Arrays;
 
 public class ThreeSum {
     public List<List<Integer>> threeSum(int[] nums) {
+        //Approach 2 all test cases passed 25 ms Beats 96.33%
         List<List<Integer>> res = new ArrayList<>();
+        int n = nums.length;
+        Arrays.sort(nums);
+        for (int i = 0; i < n; i++) {
+
+            if(i>0 && nums[i]==nums[i-1]){
+                continue;
+            }
+            int j = i + 1;
+            int k = n - 1;
+            while (j < k) {
+                int total = nums[i] + nums[j] + nums[k];
+                if (total>0){
+                    k--;
+                } else if(total<0)
+                    j++;
+                else{
+                    res.add(Arrays.asList(nums[i],nums[j],nums[k]));
+                    j++;
+
+                    while(nums[j] == nums[j-1] && j<k){
+                        j++;
+                    }
+                }
+            }
+        }
+        return res;
+        //Approach 1 Some Test Cases Failed
+        /*List<List<Integer>> res = new ArrayList<>();
         int l = nums.length;
         int c = 0;
         int s = 0;
@@ -46,6 +75,6 @@ public class ThreeSum {
                 }
             }
         }
-        return res;
+        return res;*/
     }
 }

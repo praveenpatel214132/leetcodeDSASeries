@@ -1,5 +1,9 @@
 package code.main.Arrays;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class ThreeSum {
     public List<List<Integer>> threeSum(int[] nums) {
         //Approach 2 all test cases passed 25 ms Beats 96.33%

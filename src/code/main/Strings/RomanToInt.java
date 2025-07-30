@@ -36,8 +36,8 @@ public class RomanToInt {
 //        return sum;
         //Approach 2 Enhanced
         int ans = 0, num = 0;
-        for (int i = S.length()-1; i >= 0; i--) {
-            switch(S.charAt(i)) {
+        for (int i = s.length()-1; i >= 0; i--) {
+            switch(s.charAt(i)) {
                 case 'I': num = 1; break;
                 case 'V': num = 5; break;
                 case 'X': num = 10; break;
